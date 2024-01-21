@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 16px;
+  margin-top: 0;
+  padding: 16px 16px;
+  border-bottom: 1px solid var(--secondary);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 36px;
+}
