@@ -10,6 +10,8 @@ body {
   --primary: #1fb9f2;
   --secondary: #4e5d43;
   --accent: #709973;
+  --error-text: #de3030;
+  --error-background: #842424;
 
   background-color: var(--background);
   color: var(--text);
