@@ -1,5 +1,6 @@
 import { CodeSelection } from "~/components/CodeSelection/CodeSelection";
 import styles from "./index.module.css";
+import { DataOutput } from "~/components/DataOutput/DataOutput";
 
 export default function Home() {
   return (
@@ -9,7 +10,9 @@ export default function Home() {
         <div className={styles["left-section"]}>
           <CodeSelection />
         </div>
-        <div className={styles["right-section"]}></div>
+        <div className={styles["right-section"]}>
+          <DataOutput />
+        </div>
       </div>
       {/* Top part section to checkbox and input fields */}
       {/* Bottom part is 2x, left for field in object form (the state really) */}
