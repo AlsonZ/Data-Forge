@@ -3,7 +3,7 @@ import type { FieldsType } from "~/store/fields";
 import { useRef, type ChangeEvent, useState, useEffect } from "react";
 import { useFieldStore } from "~/store/fields";
 import CodeEditor from "@uiw/react-textarea-code-editor";
-import { backgroundColour } from "~/styles/globals";
+import { backgroundColour, secondaryColour } from "~/styles/globals";
 import styles from "./codeSelection.module.css";
 
 export const CodeSelection = () => {
@@ -52,6 +52,10 @@ export const CodeSelection = () => {
           fontSize: 16,
           fontFamily:
             "ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace",
+          border: "1px solid",
+          borderColor: secondaryColour,
+          borderRadius: 8,
+          height: "100%",
         }}
       />
     </>

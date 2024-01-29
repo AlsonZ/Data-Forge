@@ -1,9 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
 import CodeEditor from "@uiw/react-textarea-code-editor";
-import { backgroundColour } from "~/styles/globals";
+import { backgroundColour, secondaryColour } from "~/styles/globals";
 import { useFieldStore } from "~/store/fields";
 import type { Field, FieldsType } from "~/store/fields";
+import { useWordStore } from "~/store/words";
 
 type DataType = Array<FieldData>;
 type FieldData = Record<string, unknown>;
@@ -14,10 +15,13 @@ export const DataOutput = () => {
   const { fields } = useFieldStore((state) => ({
     fields: state.fields,
   }));
+  const { firstNames } = useWordStore((state) => ({
+    firstNames: state.firstNames,
+  }));
 
   useEffect(() => {
     const generateData = (fields: FieldsType) => {
-      const generateFieldData = (field: Field) => {
+      const generateRandomLettersFieldData = (field: Field) => {
         // get field.min
         // get field.max
         // get field.type
@@ -28,17 +32,21 @@ export const DataOutput = () => {
         const max = field.max ?? 10;
         // very simple random string generator for now
         for (let i = 0; i <= max; i++) {
-          console.log("runs?");
+          // console.log("runs?");
           data += mask[Math.floor(Math.random() * mask.length)];
         }
-        console.log("generate data", data);
+        // console.log("generate data", data);
         if (data) {
           // return this data
           return data;
         }
         return undefined;
       };
-      // use type to generate string with min and max
+      const generateFieldData = (field: Field) => {
+        if (field.type === "firstName") {
+          return firstNames[Math.floor(Math.random() * firstNames.length)];
+        }
+      };
 
       const generatedData: DataType = [];
       // loop through every field, put it into a function to generate fieldData
@@ -91,6 +99,10 @@ export const DataOutput = () => {
           fontSize: 16,
           fontFamily:
             "ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace",
+          border: "1px solid",
+          borderColor: secondaryColour,
+          borderRadius: 8,
+          height: "100%",
         }}
       />
     </>
