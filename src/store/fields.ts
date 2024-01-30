@@ -17,10 +17,16 @@ type FieldState = {
 export const useFieldStore = create<FieldState>((set) => ({
   fields: [
     {
-      fieldName: "first_name",
+      fieldName: "random_string",
       type: "string",
-      min: 5,
+      min: 10,
       max: 20,
+    },
+    {
+      fieldName: "first_name",
+      type: "firstName",
+      min: 5,
+      max: 15,
     },
   ],
   addField: (field) => set((state) => ({ fields: [...state.fields, field] })),

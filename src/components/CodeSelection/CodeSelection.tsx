@@ -13,15 +13,7 @@ export const CodeSelection = () => {
     fields: state.fields,
     setFields: state.setFields,
   }));
-  const [codeValue, setCodeValue] = useState<string>(`
-  [
-    {
-      "fieldName": "example_field",
-      "type": "string",
-      "min": 5,
-      "max": 20
-    },
-  ]`);
+  const [codeValue, setCodeValue] = useState<string>(``);
 
   useEffect(() => {
     setCodeValue(JSON.stringify(fields, null, 2));

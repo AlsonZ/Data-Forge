@@ -1,10 +1,3 @@
-import { create } from "zustand";
-
-type WordState = {
-  firstNames: Array<string>;
-  types: Record<string, Array<string>>;
-};
-
 const firstNames = [
   "Liam",
   "Emma",
@@ -108,9 +101,10 @@ const firstNames = [
   "Paisley",
 ];
 
-export const useWordStore = create<WordState>(() => ({
-  firstNames: firstNames,
-  types: {
-    firstNames: firstNames,
-  },
-}));
+export type ItemTypes = Record<string, Array<string>>;
+
+const itemTypes: ItemTypes = {
+  firstName: firstNames,
+};
+
+export { itemTypes };

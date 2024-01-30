@@ -4,7 +4,7 @@ import CodeEditor from "@uiw/react-textarea-code-editor";
 import { backgroundColour, secondaryColour } from "~/styles/globals";
 import { useFieldStore } from "~/store/fields";
 import type { Field, FieldsType } from "~/store/fields";
-import { useWordStore } from "~/store/words";
+import { itemTypes } from "~/constants/words";
 
 type DataType = Array<FieldData>;
 type FieldData = Record<string, unknown>;
@@ -15,36 +15,49 @@ export const DataOutput = () => {
   const { fields } = useFieldStore((state) => ({
     fields: state.fields,
   }));
-  const { firstNames } = useWordStore((state) => ({
-    firstNames: state.firstNames,
-  }));
 
   useEffect(() => {
     const generateData = (fields: FieldsType) => {
-      const generateRandomLettersFieldData = (field: Field) => {
-        // get field.min
-        // get field.max
-        // get field.type
-        // get field.fieldName
-        // use data to generate the correct random data
+      const generateRandomLetters = (field: Field) => {
         const mask = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
         let data = "";
-        const max = field.max ?? 10;
+        const max =
+          Math.floor(Math.random() * (field.max - field.min + 1)) + field.min;
         // very simple random string generator for now
         for (let i = 0; i <= max; i++) {
-          // console.log("runs?");
           data += mask[Math.floor(Math.random() * mask.length)];
         }
-        // console.log("generate data", data);
-        if (data) {
-          // return this data
-          return data;
-        }
-        return undefined;
+        return data;
       };
-      const generateFieldData = (field: Field) => {
-        if (field.type === "firstName") {
-          return firstNames[Math.floor(Math.random() * firstNames.length)];
+      const generateRandomFieldItem = (type: string, field: Field) => {
+        let generatedItem = "";
+        let count = 0;
+        const maxLoop = 20;
+        const itemType = itemTypes[type];
+        if (itemType !== undefined) {
+          while (
+            !(
+              generatedItem.length >= field.min &&
+              generatedItem.length <= field.max
+            ) &&
+            count <= maxLoop
+          ) {
+            generatedItem =
+              itemType[Math.floor(Math.random() * itemType.length)]!;
+            count++;
+          }
+        }
+        // Todo
+        // Inform user about not enough names within proided range
+        // Or return empty string
+        return generatedItem;
+      };
+      const generateItem = (field: Field) => {
+        // Possible item types: firstName, lastName, fullName, email, id, uuid, mobileNumber, password
+        if (field.type === "string") {
+          return generateRandomLetters(field);
+        } else {
+          return generateRandomFieldItem(field.type, field);
         }
       };
 
@@ -54,7 +67,7 @@ export const DataOutput = () => {
       fields.forEach((field) => {
         // put generated field into object
         if (field.fieldName) {
-          const data = generateFieldData(field);
+          const data = generateItem(field);
           if (data) {
             fieldData[field.fieldName] = data;
           }
