@@ -1,10 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
-import CodeEditor from "@uiw/react-textarea-code-editor";
-import { backgroundColour, secondaryColour } from "~/styles/globals";
 import { useFieldStore } from "~/store/fields";
 import type { Field, FieldsType } from "~/store/fields";
 import { itemTypes } from "~/constants/words";
+import CodeViewer from "../CodeViewer/CodeViewer";
 
 type DataType = Array<FieldData>;
 type FieldData = Record<string, unknown>;
@@ -99,23 +98,11 @@ export const DataOutput = () => {
 
   return (
     <>
-      <CodeEditor
-        // ref={codeEditorRef}
+      <CodeViewer
         value={output}
-        language="json"
         placeholder="Waiting for Fields"
         onKeyDown={(e) => {
           e.preventDefault();
-        }}
-        style={{
-          backgroundColor: backgroundColour,
-          fontSize: 16,
-          fontFamily:
-            "ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace",
-          border: "1px solid",
-          borderColor: secondaryColour,
-          borderRadius: 8,
-          height: "100%",
         }}
       />
     </>

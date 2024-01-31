@@ -1,13 +1,13 @@
 "use client";
 import type { FieldsType } from "~/store/fields";
-import { useRef, type ChangeEvent, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
+import type { ChangeEvent } from "react";
 import { useFieldStore } from "~/store/fields";
-import CodeEditor from "@uiw/react-textarea-code-editor";
-import { backgroundColour, secondaryColour } from "~/styles/globals";
 import styles from "./codeSelection.module.css";
+import CodeViewer from "../CodeViewer/CodeViewer";
 
 export const CodeSelection = () => {
-  const codeEditorRef = useRef<HTMLTextAreaElement>(null);
+  // const codeEditorRef = useRef<HTMLTextAreaElement>(null);
   const [error, setError] = useState<string | null>(null);
   const { fields, setFields } = useFieldStore((state) => ({
     fields: state.fields,
@@ -33,22 +33,10 @@ export const CodeSelection = () => {
   return (
     <>
       {error && <p className={styles.error}>{error}</p>}
-      <CodeEditor
-        ref={codeEditorRef}
+      <CodeViewer
         value={codeValue}
-        language="json"
         placeholder="Please enter JSON code."
         onChange={onChange}
-        style={{
-          backgroundColor: backgroundColour,
-          fontSize: 16,
-          fontFamily:
-            "ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace",
-          border: "1px solid",
-          borderColor: secondaryColour,
-          borderRadius: 8,
-          height: "100%",
-        }}
       />
     </>
   );
