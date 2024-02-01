@@ -2,8 +2,13 @@
 import { useEffect, useState } from "react";
 import { useFieldStore } from "~/store/fields";
 import type { Field, FieldsType } from "~/store/fields";
-import { itemTypes } from "~/constants/words";
 import CodeViewer from "../CodeViewer/CodeViewer";
+import { generateRandomLetters } from "~/generators/generateRandomLetters";
+import { generateRandomFieldItem } from "~/generators/generateRandomFieldItems";
+import {
+  generateRandomMobileNumbers,
+  generateRandomNumbers,
+} from "~/generators/generateRandomNumbers";
 
 type DataType = Array<FieldData>;
 type FieldData = Record<string, unknown>;
@@ -17,46 +22,16 @@ export const DataOutput = () => {
 
   useEffect(() => {
     const generateData = (fields: FieldsType) => {
-      const generateRandomLetters = (field: Field) => {
-        const mask = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
-        let data = "";
-        const max =
-          Math.floor(Math.random() * (field.max - field.min + 1)) + field.min;
-        // very simple random string generator for now
-        for (let i = 0; i <= max; i++) {
-          data += mask[Math.floor(Math.random() * mask.length)];
-        }
-        return data;
-      };
-      const generateRandomFieldItem = (type: string, field: Field) => {
-        let generatedItem = "";
-        let count = 0;
-        const maxLoop = 20;
-        const itemType = itemTypes[type];
-        if (itemType !== undefined) {
-          while (
-            !(
-              generatedItem.length >= field.min &&
-              generatedItem.length <= field.max
-            ) &&
-            count <= maxLoop
-          ) {
-            generatedItem =
-              itemType[Math.floor(Math.random() * itemType.length)]!;
-            count++;
-          }
-        }
-        // Todo
-        // Inform user about not enough names within proided range
-        // Or return empty string
-        return generatedItem;
-      };
       const generateItem = (field: Field) => {
         // Possible item types: firstName, lastName, fullName, email, id, uuid, mobileNumber, password
         if (field.type === "string") {
-          return generateRandomLetters(field);
+          return generateRandomLetters(field.min, field.max);
+        } else if (field.type === "number") {
+          return generateRandomNumbers(field.min, field.max);
+        } else if (field.type === "mobileNumber") {
+          return generateRandomMobileNumbers();
         } else {
-          return generateRandomFieldItem(field.type, field);
+          return generateRandomFieldItem(field.type, field.min, field.max);
         }
       };
 
