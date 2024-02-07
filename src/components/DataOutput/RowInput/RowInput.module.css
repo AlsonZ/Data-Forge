@@ -1,0 +1,38 @@
+.container {
+  min-height: 22px;
+  width: 100%;
+  /* border: 1px solid var(--secondary); */
+  /* border-radius: 4px; */
+  margin-bottom: 8px;
+  padding: 2px 4px;
+}
+.label {
+  font-size: 14px;
+  line-height: 20px;
+  margin-right: 4px;
+}
+.rowInput {
+  background-color: var(--background);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+}
+.rowInput:hover,
+.rowInput:active,
+.rowInput:focus-visible {
+  border: 1px solid var(--secondary);
+  outline: none;
+}
+
+.rowInput::-webkit-outer-spin-button,
+.rowInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.rowInput[type="number"] {
+  -moz-appearance: textfield;
+}

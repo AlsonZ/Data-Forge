@@ -9,6 +9,7 @@ import {
   generateRandomMobileNumbers,
   generateRandomNumbers,
 } from "~/generators/generateRandomNumbers";
+import RowInput from "./RowInput/RowInput";
 
 type DataType = Array<FieldData>;
 type FieldData = Record<string, unknown>;
@@ -52,7 +53,7 @@ export const DataOutput = () => {
       if (Object.keys(fieldData).length > 0) {
         generatedData.push(fieldData);
       }
-      // if (fieldName) data[fieldName] = "test";
+
       if (generatedData.length > 0) {
         return generatedData;
       }
@@ -73,6 +74,7 @@ export const DataOutput = () => {
 
   return (
     <>
+      <RowInput />
       <CodeViewer
         value={output}
         placeholder="Waiting for Fields"

@@ -32,7 +32,9 @@ export const CodeSelection = () => {
   };
   return (
     <>
-      {error && <p className={styles.error}>{error}</p>}
+      <div className={styles.errorContainer}>
+        {error && <p className={styles.error}>{error}</p>}
+      </div>
       <CodeViewer
         value={codeValue}
         placeholder="Please enter JSON code."

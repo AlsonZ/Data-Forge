@@ -36,7 +36,9 @@ const CodeViewer = (props: Props) => {
         border: "1px solid",
         borderColor: secondaryColour,
         borderRadius: 8,
-        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        flex: 1,
       }}
     />
   );
