@@ -5,10 +5,11 @@
   /* border-radius: 4px; */
   margin-bottom: 8px;
   padding: 2px 4px;
+  display: flex;
 }
 .label {
   font-size: 14px;
-  line-height: 20px;
+  line-height: 24px;
   margin-right: 4px;
 }
 .rowInput {
@@ -19,6 +20,7 @@
   font-size: 14px;
   line-height: 20px;
   text-align: right;
+  width: 40px;
 }
 .rowInput:hover,
 .rowInput:active,
@@ -35,4 +37,14 @@
 
 .rowInput[type="number"] {
   -moz-appearance: textfield;
+}
+
+.button {
+  background-color: var(--accent);
+  color: var(--text);
+  border-radius: 2px;
+  border: none;
+  padding: 4px 4px;
+  cursor: pointer;
+  margin-left: auto;
 }
