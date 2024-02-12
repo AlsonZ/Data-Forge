@@ -77,7 +77,7 @@ export const DataOutput = () => {
     setOutput(JSON.stringify(arrayOutput, null, 2));
   }, [arrayOutput]);
 
-  const onClick = (rows: number) => {
+  const onSubmitRows = (rows: number) => {
     // re-generate the data for how many rows there are now
     const generatedData = generateData(fields, rows);
     const filteredData = generatedData.filter(
@@ -90,7 +90,7 @@ export const DataOutput = () => {
 
   return (
     <>
-      <RowInput onClick={onClick} />
+      <RowInput onSubmitRows={onSubmitRows} />
       <CodeViewer
         value={output}
         placeholder="Waiting for Fields"

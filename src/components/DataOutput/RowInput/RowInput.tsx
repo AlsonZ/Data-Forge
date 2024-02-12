@@ -1,14 +1,19 @@
-import type { ChangeEvent } from "react";
+import type { ChangeEvent, FormEvent } from "react";
 import { useState } from "react";
 import styles from "./RowInput.module.css";
 
-const RowInput = ({ onClick }: { onClick: (rows: number) => void }) => {
+type Props = {
+  onSubmitRows: (rows: number) => void;
+};
+
+const RowInput = ({ onSubmitRows }: Props) => {
   const max = 1000;
   const min = 1;
   const [rows, setRows] = useState<number>(min);
 
-  const onButtonClick = () => {
-    onClick(rows);
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    onSubmitRows(rows);
   };
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -26,22 +31,24 @@ const RowInput = ({ onClick }: { onClick: (rows: number) => void }) => {
     }
   };
   return (
-    <div className={styles.container}>
-      <label htmlFor="row" className={styles.label}>
-        Rows:
-      </label>
-      <input
-        id="row"
-        name="row"
-        type="number"
-        className={styles.rowInput}
-        value={rows}
-        onChange={onChange}
-      />
-      <button className={styles.button} onClick={onButtonClick}>
-        Generate
-      </button>
-    </div>
+    <form onSubmit={onSubmit}>
+      <div className={styles.container}>
+        <label htmlFor="row" className={styles.label}>
+          Rows:
+        </label>
+        <input
+          id="row"
+          name="row"
+          type="number"
+          className={styles.rowInput}
+          value={rows}
+          onChange={onChange}
+        />
+        <button className={styles.button} type="submit">
+          Generate
+        </button>
+      </div>
+    </form>
   );
 };
 
