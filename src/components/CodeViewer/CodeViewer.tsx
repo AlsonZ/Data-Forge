@@ -1,11 +1,8 @@
 "use client";
 import CodeEditor from "@uiw/react-textarea-code-editor";
-import {
-  backgroundColour,
-  secondaryColour,
-  textColour,
-} from "~/styles/globals";
 import type { KeyboardEvent, ChangeEvent } from "react";
+
+import styles from "./codeViewer.module.css";
 
 type Props = {
   value: string;
@@ -27,19 +24,7 @@ const CodeViewer = (props: Props) => {
       placeholder={placeholder}
       onKeyDown={onKeyDown}
       onChange={onChange}
-      style={{
-        backgroundColor: backgroundColour,
-        color: textColour,
-        fontSize: 16,
-        fontFamily:
-          "ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace",
-        border: "1px solid",
-        borderColor: secondaryColour,
-        borderRadius: 8,
-        display: "flex",
-        flexDirection: "column",
-        flex: 1,
-      }}
+      className={styles.codeViewer}
     />
   );
 };

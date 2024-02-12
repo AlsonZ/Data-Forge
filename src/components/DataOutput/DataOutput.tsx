@@ -91,6 +91,7 @@ export const DataOutput = () => {
   return (
     <>
       <RowInput onSubmitRows={onSubmitRows} />
+      {/* Add Loading for large amount of data being generated */}
       <CodeViewer
         value={output}
         placeholder="Waiting for Fields"

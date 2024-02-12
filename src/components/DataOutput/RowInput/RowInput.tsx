@@ -7,27 +7,23 @@ type Props = {
 };
 
 const RowInput = ({ onSubmitRows }: Props) => {
-  const max = 1000;
+  const max = 100; // Temp
   const min = 1;
   const [rows, setRows] = useState<number>(min);
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onSubmitRows(rows);
+    if (rows >= min && rows <= max) {
+      onSubmitRows(rows);
+    }
   };
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target.value) {
-      const value = parseInt(e.target.value);
-      if (value > max) {
-        setRows(max);
-      } else if (value < min) {
-        setRows(min);
-      } else {
-        setRows(value);
-      }
+    const value = parseInt(e.target.value);
+    if (value >= max) {
+      setRows(max);
     } else {
-      setRows(min);
+      setRows(value);
     }
   };
   return (
