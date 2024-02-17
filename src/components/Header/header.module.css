@@ -3,9 +3,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 16px 16px;
+  margin: 8px;
   margin-top: 0;
-  padding: 16px 16px;
+  padding: 8px;
   border-bottom: 1px solid var(--secondary);
 }
 
@@ -13,4 +13,30 @@
   margin: 0;
   font-size: 24px;
   line-height: 36px;
+}
+.header span {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 8px;
+}
+.link {
+  color: var(--primary);
+}
+.link:hover,
+.link:active {
+  filter: brightness(1.5);
+}
+
+@media (min-width: 768px) {
+  .header {
+    margin: 16px;
+    margin-top: 0;
+    padding: 16px;
+  }
 }

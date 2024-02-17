@@ -37,7 +37,7 @@ export const CodeSelection = () => {
       </div>
       <CodeViewer
         value={codeValue}
-        placeholder="Please enter JSON code."
+        placeholder="Please enter JSON."
         onChange={onChange}
       />
     </>
