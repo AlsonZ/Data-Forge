@@ -1,0 +1,63 @@
+.question {
+  color: var(--text);
+  font-size: 16px;
+  border: 2px solid var(--secondary);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0 20px;
+}
+.questionHeading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  padding: 20px 0;
+}
+.cross {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.crossLine {
+  position: absolute;
+  background: var(--text);
+  transition: transform 0.3s ease-in-out;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 2px;
+}
+.crossLineHorizontal {
+  width: 24px;
+  height: 6px;
+}
+.crossLineVertical {
+  width: 6px;
+  height: 24px;
+}
+.crossActive .crossLine {
+  transform: rotate(45deg);
+}
+
+.answerContainer {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.8s cubic-bezier(0, 1, 0, 1);
+}
+
+.answerActive {
+  max-height: 999px;
+  transition: max-height 1s ease-in-out;
+}
+
+.answer {
+  padding-bottom: 20px;
+  margin: 0;
+  box-sizing: border-box;
+}
