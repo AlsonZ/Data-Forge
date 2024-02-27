@@ -1,6 +1,27 @@
 import styles from "./faq.module.css";
 import { Question } from "~/components/Question/Question";
 
+const questions = [
+  {
+    heading: "How do I generate a field?",
+    answer: `Create an Array in the left code editor section. Then insert objects with the keys required for your specific field type.`,
+  },
+  {
+    heading: "How do I generate a first name?",
+    answer: "Here is an example to generate a first name field. ",
+    codeExample:
+      '[{\n  "fieldName": "first_name",\n  "type": "firstName",\n  "min": 5,\n  "max": 15\n}]',
+  },
+  {
+    heading: "What keys are available for me to use?",
+    answer: `The keys that are available to be used are "fieldName", "type", "min", "max". If "min" and "max" are not supplied, they will use their default value`,
+  },
+  {
+    heading: "What types are available for me to use?",
+    answer: `The current types that are available to be used are "firstName", "lastName", "fullName", "password", "mobileNumber", "number" and "string". `,
+  },
+];
+
 export default function Faq() {
   return (
     <div className={styles.main}>
@@ -10,8 +31,10 @@ export default function Faq() {
           Answers to common questions you may have.
         </span>
       </div>
-      <div>
-        <Question heading="Question 1" answer="Answer to question 1." />
+      <div className={styles.questionList}>
+        {questions.map((props, index) => (
+          <Question {...props} key={props.heading + index} />
+        ))}
       </div>
     </div>
   );

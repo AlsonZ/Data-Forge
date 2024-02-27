@@ -1,20 +1,22 @@
 "use client";
 import { useState } from "react";
 import styles from "./question.module.css";
+import CodeView from "../CodeView/CodeView";
 
-type QuestionType = {
+type QuestionProps = {
   heading: string;
   answer: string;
+  codeExample?: string;
 };
 
-export const Question = ({ heading, answer }: QuestionType) => {
+export const Question = ({ heading, answer, codeExample }: QuestionProps) => {
   const [active, setActive] = useState<boolean>(false);
   const onClick = () => {
     setActive((prevState) => !prevState);
   };
   return (
-    <div className={styles.question} onClick={onClick}>
-      <h3 className={styles.questionHeading}>
+    <div className={styles.question}>
+      <h3 className={styles.questionHeading} onClick={onClick}>
         {heading}
         <div className={`${styles.cross} ${active ? styles.crossActive : ""}`}>
           <div
@@ -29,6 +31,7 @@ export const Question = ({ heading, answer }: QuestionType) => {
         }`}
       >
         <p className={styles.answer}>{answer}</p>
+        {codeExample && <CodeView>{codeExample}</CodeView>}
       </div>
     </div>
   );

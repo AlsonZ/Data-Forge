@@ -1,10 +1,10 @@
 "use client";
 import type { FieldsType } from "~/store/fields";
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import type { ChangeEvent } from "react";
 import { useFieldStore } from "~/store/fields";
 import styles from "./codeSelection.module.css";
-import CodeViewer from "../CodeViewer/CodeViewer";
+import CodeEditor from "../CodeEditor/CodeEditor";
 
 export const CodeSelection = () => {
   // const codeEditorRef = useRef<HTMLTextAreaElement>(null);
@@ -35,7 +35,7 @@ export const CodeSelection = () => {
       <div className={styles.errorContainer}>
         {error && <p className={styles.error}>{error}</p>}
       </div>
-      <CodeViewer
+      <CodeEditor
         value={codeValue}
         placeholder="Please enter JSON."
         onChange={onChange}

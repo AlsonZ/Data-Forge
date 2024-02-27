@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useFieldStore } from "~/store/fields";
 import type { Field, FieldsType } from "~/store/fields";
-import CodeViewer from "../CodeViewer/CodeViewer";
+import CodeEditor from "../CodeEditor/CodeEditor";
 import { generateRandomLetters } from "~/generators/generateRandomLetters";
 import { generateRandomFieldItem } from "~/generators/generateRandomFieldItems";
 import {
@@ -92,7 +92,7 @@ export const DataOutput = () => {
     <>
       <RowInput onSubmitRows={onSubmitRows} />
       {/* Add Loading for large amount of data being generated */}
-      <CodeViewer
+      <CodeEditor
         value={output}
         placeholder="Waiting for Fields"
         onKeyDown={(e) => {

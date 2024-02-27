@@ -1,8 +1,8 @@
 "use client";
-import CodeEditor from "@uiw/react-textarea-code-editor";
+import UIWCodeEditor from "@uiw/react-textarea-code-editor";
 import type { KeyboardEvent, ChangeEvent } from "react";
 
-import styles from "./codeViewer.module.css";
+import styles from "./codeEditor.module.css";
 
 type Props = {
   value: string;
@@ -14,10 +14,10 @@ type Props = {
   style?: object;
 };
 
-const CodeViewer = (props: Props) => {
+const CodeEditor = (props: Props) => {
   const { value, placeholder, onKeyDown, onChange, style } = props;
   return (
-    <CodeEditor
+    <UIWCodeEditor
       value={value}
       data-color-mode="dark"
       language="json"
@@ -29,4 +29,4 @@ const CodeViewer = (props: Props) => {
   );
 };
 
-export default CodeViewer;
+export default CodeEditor;
