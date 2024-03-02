@@ -24,7 +24,7 @@ const CodeEditor = (props: Props) => {
       placeholder={placeholder}
       onKeyDown={onKeyDown}
       onChange={onChange}
-      className={styles.codeViewer}
+      className={`code-editor-syntax-styling ${styles.codeViewer}`}
     />
   );
 };

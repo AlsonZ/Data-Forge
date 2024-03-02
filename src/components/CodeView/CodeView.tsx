@@ -1,6 +1,6 @@
-import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
-import json from "react-syntax-highlighter/dist/esm/languages/hljs/json";
-import a11yDark from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
+import json from "react-syntax-highlighter/dist/esm/languages/prism/json";
+import atomDark from "react-syntax-highlighter/dist/esm/styles/prism/atom-dark";
 
 SyntaxHighlighter?.registerLanguage("json", json);
 
@@ -9,7 +9,7 @@ const CodeView = ({ children }: { children: React.ReactNode }) => {
   if (!code) return null;
 
   return (
-    <SyntaxHighlighter language="json" style={a11yDark}>
+    <SyntaxHighlighter language="json" style={atomDark}>
       {code}
     </SyntaxHighlighter>
   );

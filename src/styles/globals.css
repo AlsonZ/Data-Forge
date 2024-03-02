@@ -53,3 +53,170 @@ a {
     border-radius: 8px;
   }
 }
+
+/* Code Editor Syntax Styling */
+
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.comment,
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.prolog,
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.doctype,
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.cdata {
+  color: #7c7c7c;
+}
+
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.punctuation {
+  color: #c5c8c6;
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.property,
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.keyword,
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.tag {
+  color: #96cbfe;
+}
+
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.class-name {
+  color: #ffffb6;
+  text-decoration: underline;
+}
+
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.boolean,
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.constant {
+  color: #99cc99;
+}
+
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.symbol,
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.deleted {
+  color: #f92672;
+}
+
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.number {
+  color: #ff73fd;
+}
+
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.selector,
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.attr-name,
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.string,
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.char,
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.builtin,
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.inserted {
+  color: #a8ff60;
+}
+
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.variable {
+  color: #c6c5fe;
+}
+
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.operator {
+  color: #ededed;
+}
+
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.entity {
+  color: #ffffb6;
+  cursor: help;
+}
+
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.url {
+  color: #96cbfe;
+}
+
+.language-css.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.string,
+.style.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.string {
+  color: #87c38a;
+}
+
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.atrule,
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.attr-value {
+  color: #f9ee98;
+}
+
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.function {
+  color: #dad085;
+}
+
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.regex {
+  color: #e9c062;
+}
+
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.important {
+  color: #fd971f;
+}
+
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.important,
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.bold {
+  font-weight: bold;
+}
+
+.code-editor-syntax-styling.code-editor-syntax-styling
+  code[class*="language-"]
+  .token.italic {
+  font-style: italic;
+}
