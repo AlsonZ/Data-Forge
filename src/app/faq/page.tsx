@@ -14,11 +14,23 @@ const questions = [
   },
   {
     heading: "What keys are available for me to use?",
-    answer: `The keys that are available to be used are "fieldName", "type", "min", "max". If "min" and "max" are not supplied, they will use their default value`,
+    answer: `The keys that are available to be used are: 
+    "fieldName"
+    "type"
+    "min"
+    "max
+If "min" and "max" are not supplied, they will use their default value.`,
   },
   {
     heading: "What types are available for me to use?",
-    answer: `The current types that are available to be used are "firstName", "lastName", "fullName", "password", "mobileNumber", "number" and "string". `,
+    answer: `The current types that are available to be used are:
+    "firstName": Generate a random first name
+    "lastName": Generate a random last name
+    "fullName": Generate a random full name
+    "password": Generate a random password
+    "mobileNumber": Generate a random 10 digit number
+    "number": Generate a random number. Defaults to between 1 and 1 trillion
+    "string": Generate a random string. Defaults to between 1 and 20 letters `,
   },
 ];
 
