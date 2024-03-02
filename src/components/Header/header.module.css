@@ -26,11 +26,12 @@
   gap: 8px;
 }
 .link {
-  color: var(--primary);
+  color: var(--text);
+  transition: filter 0.3s ease-in-out;
 }
 .link:hover,
 .link:active {
-  filter: brightness(1.5);
+  filter: brightness(0.5);
 }
 
 @media (min-width: 768px) {

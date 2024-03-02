@@ -3,19 +3,25 @@
   font-size: 16px;
   border: 2px solid var(--secondary);
   border-radius: 8px;
-  padding: 0 20px;
 }
-.questionHeading {
+.questionButton {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background: none;
+  border: none;
   gap: 8px;
+  margin: 0;
+  padding: 20px;
+  width: 100%;
+  cursor: pointer;
+}
+.questionHeading {
+  color: var(--text);
   font-size: 16px;
   line-height: 24px;
   margin: 0;
-  padding: 20px 0;
-  cursor: pointer;
 }
 .cross {
   position: relative;
@@ -25,7 +31,7 @@
 .crossLine {
   position: absolute;
   background: var(--text);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.2s ease-in-out;
   top: 0;
   bottom: 0;
   left: 0;
@@ -47,6 +53,7 @@
 
 .answerContainer {
   max-height: 0px;
+  padding: 0 20px;
   overflow: hidden;
   transition: max-height 0.8s cubic-bezier(0, 1, 0, 1);
 }
@@ -57,6 +64,7 @@
 }
 
 .answer {
+  padding-top: 10px;
   padding-bottom: 20px;
   margin: 0;
   box-sizing: border-box;

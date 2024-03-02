@@ -16,15 +16,19 @@ export const Question = ({ heading, answer, codeExample }: QuestionProps) => {
   };
   return (
     <div className={styles.question}>
-      <h3 className={styles.questionHeading} onClick={onClick}>
-        {heading}
+      <button
+        className={styles.questionButton}
+        onClick={onClick}
+        aria-expanded={active}
+      >
+        <h3 className={styles.questionHeading}>{heading}</h3>
         <div className={`${styles.cross} ${active ? styles.crossActive : ""}`}>
           <div
             className={`${styles.crossLine} ${styles.crossLineHorizontal}`}
           />
           <div className={`${styles.crossLine} ${styles.crossLineVertical}`} />
         </div>
-      </h3>
+      </button>
       <div
         className={`${styles.answerContainer} ${
           active ? styles.answerActive : ""
