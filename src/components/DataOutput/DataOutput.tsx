@@ -96,6 +96,14 @@ export const DataOutput = () => {
         value={output}
         placeholder="Waiting for Fields"
         onKeyDown={(e) => {
+          if (e.ctrlKey) {
+            // prevent cut or paste
+            if (e.key === "x" || e.key === "v") {
+              e.preventDefault();
+            }
+            // allow shortcuts with ctrl
+            return;
+          }
           e.preventDefault();
         }}
       />
