@@ -1,0 +1,6 @@
+.container {
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+  height: 40vh;
+  overflow-y: scroll !important;
+}

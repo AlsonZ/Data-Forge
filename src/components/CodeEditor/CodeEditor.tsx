@@ -1,7 +1,6 @@
 "use client";
 import UIWCodeEditor from "@uiw/react-textarea-code-editor";
 import type { KeyboardEvent, ChangeEvent } from "react";
-
 import styles from "./codeEditor.module.css";
 
 type Props = {

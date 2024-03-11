@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.sidebar {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: 1px;
+  top: 0;
+  right: 0;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    right: auto;
+    left: 0;
+    transform-origin: bottom left;
+    transform: rotate(-90deg) translateX(-100%);
+  }
+}
+
+.button {
+  background-color: var(--secondary);
+  color: var(--text);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border: none;
+  padding: 4px 4px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.active {
+  background-color: var(--primary);
+}

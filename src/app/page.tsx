@@ -1,4 +1,4 @@
-import { CodeSelection } from "~/components/CodeSelection/CodeSelection";
+import FieldSelection from "~/components/FieldSelection/FieldSelection";
 import styles from "./index.module.css";
 import { DataOutput } from "~/components/DataOutput/DataOutput";
 
@@ -8,7 +8,7 @@ export default function Home() {
       {/* <div className={styles["top-section"]}>asd</div> */}
       <div className={styles["bottom-section"]}>
         <div className={styles["left-section"]}>
-          <CodeSelection />
+          <FieldSelection />
         </div>
         <div className={styles["right-section"]}>
           <DataOutput />

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import type { ChangeEvent } from "react";
 import { useFieldStore } from "~/store/fields";
 import styles from "./codeSelection.module.css";
-import CodeEditor from "../CodeEditor/CodeEditor";
+import CodeEditor from "../../CodeEditor/CodeEditor";
 
 export const CodeSelection = () => {
   // const codeEditorRef = useRef<HTMLTextAreaElement>(null);
