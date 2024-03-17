@@ -2,6 +2,7 @@ import type { ChangeEvent, FormEvent } from "react";
 import { useState } from "react";
 import styles from "./rowInput.module.css";
 import Input from "~/components/Input/Input";
+import Button from "~/components/Button/Button";
 
 type Props = {
   onSubmitRows: (rows: number) => void;
@@ -39,9 +40,9 @@ const RowInput = ({ onSubmitRows }: Props) => {
           value={rows}
           onChange={onChange}
         />
-        <button className={styles.button} type="submit">
+        <Button className={styles.button} type="submit">
           Generate
-        </button>
+        </Button>
       </div>
     </form>
   );

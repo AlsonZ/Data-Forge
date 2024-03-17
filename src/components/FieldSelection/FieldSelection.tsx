@@ -4,6 +4,7 @@ import { useState } from "react";
 import { CodeSelection } from "./CodeSelection/CodeSelection";
 import InputSelection from "./InputSelection/InputSelection";
 import styles from "./fieldSelection.module.css";
+import Button from "../Button/Button";
 
 export default function FieldSelection() {
   const [showJSON, setShowJSON] = useState<boolean>(true);
@@ -11,22 +12,22 @@ export default function FieldSelection() {
   return (
     <div className={styles.container}>
       <div className={`${styles.navbar}`}>
-        <button
-          className={`${styles.button} ${showJSON ? styles.active : ""}`}
+        <Button
+          className={`${showJSON ? styles.active : styles.inactive}`}
           onClick={() => {
             setShowJSON(true);
           }}
         >
           Json
-        </button>
-        <button
-          className={`${styles.button} ${showJSON ? "" : styles.active}`}
+        </Button>
+        <Button
+          className={`${showJSON ? styles.inactive : styles.active}`}
           onClick={() => {
             setShowJSON(false);
           }}
         >
           Input
-        </button>
+        </Button>
       </div>
       {showJSON ? <CodeSelection /> : <InputSelection />}
     </div>
