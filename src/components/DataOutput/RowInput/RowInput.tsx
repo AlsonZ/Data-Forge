@@ -1,6 +1,6 @@
 import type { ChangeEvent, FormEvent } from "react";
 import { useState } from "react";
-import styles from "./RowInput.module.css";
+import styles from "./rowInput.module.css";
 import Input from "~/components/Input/Input";
 
 type Props = {
