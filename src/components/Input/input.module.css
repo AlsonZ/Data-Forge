@@ -1,0 +1,22 @@
+.label {
+  font-size: 14px;
+  line-height: 20px;
+  margin-right: 4px;
+}
+.input {
+  background-color: var(--background);
+  border: 1px solid;
+  border-color: color-mix(in srgb, var(--secondary) 50%, transparent);
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+  width: 40px;
+}
+.input:hover,
+.input:active,
+.input:focus-visible {
+  border: 1px solid var(--secondary);
+  outline: none;
+}

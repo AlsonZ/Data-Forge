@@ -1,6 +1,7 @@
 import type { ChangeEvent, FormEvent } from "react";
 import { useState } from "react";
 import styles from "./RowInput.module.css";
+import Input from "~/components/Input/Input";
 
 type Props = {
   onSubmitRows: (rows: number) => void;
@@ -29,14 +30,12 @@ const RowInput = ({ onSubmitRows }: Props) => {
   return (
     <form onSubmit={onSubmit}>
       <div className={styles.container}>
-        <label htmlFor="row" className={styles.label}>
-          Rows:
-        </label>
-        <input
+        <Input
+          label="Rows:"
           id="row"
           name="row"
           type="number"
-          className={styles.rowInput}
+          inputClassName={styles.rowInput}
           value={rows}
           onChange={onChange}
         />
