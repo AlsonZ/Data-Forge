@@ -1,11 +1,12 @@
 .errorContainer {
-  position: relative;
+  position: absolute;
   min-height: 24px;
   width: 100%;
   z-index: 1;
   margin-bottom: 8px;
   display: flex;
   align-items: center;
+  background-color: var(--background);
 }
 
 .error {

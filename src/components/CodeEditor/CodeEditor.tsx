@@ -11,10 +11,11 @@ type Props = {
     | undefined;
   onChange?: (event: ChangeEvent<HTMLTextAreaElement>) => void;
   style?: object;
+  className?: string;
 };
 
 const CodeEditor = (props: Props) => {
-  const { value, placeholder, onKeyDown, onChange, style } = props;
+  const { value, placeholder, onKeyDown, onChange, style, className } = props;
   return (
     <UIWCodeEditor
       value={value}
@@ -23,7 +24,8 @@ const CodeEditor = (props: Props) => {
       placeholder={placeholder}
       onKeyDown={onKeyDown}
       onChange={onChange}
-      className={`code-editor-syntax-styling ${styles.codeViewer}`}
+      style={style}
+      className={`code-editor-syntax-styling ${styles.codeViewer} ${className}`}
     />
   );
 };

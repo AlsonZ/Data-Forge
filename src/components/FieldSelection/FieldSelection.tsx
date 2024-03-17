@@ -10,7 +10,7 @@ export default function FieldSelection() {
 
   return (
     <div className={styles.container}>
-      <div className={`${styles.sidebar}`}>
+      <div className={`${styles.navbar}`}>
         <button
           className={`${styles.button} ${showJSON ? styles.active : ""}`}
           onClick={() => {
