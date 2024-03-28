@@ -1,8 +1,18 @@
 import { create } from "zustand";
 
+export const typeToInputTypeMap = {
+  string: "string",
+  number: "number",
+  firstName: "string",
+  lastName: "string",
+  fullName: "string",
+  password: "string",
+  mobileNumber: "number",
+};
+
 export type Field = {
   fieldName: string;
-  type: string;
+  type: keyof typeof typeToInputTypeMap;
   min?: number;
   max?: number;
 };

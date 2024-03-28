@@ -10,6 +10,7 @@ type Props = {
   type?: InputHTMLAttributes<HTMLInputElement>["type"];
   value?: InputHTMLAttributes<HTMLInputElement>["value"];
   onChange?: InputHTMLAttributes<HTMLInputElement>["onChange"];
+  placeholder?: InputHTMLAttributes<HTMLInputElement>["placeholder"];
   inputClassName?: InputHTMLAttributes<HTMLInputElement>["className"];
   extraInputProps?: InputHTMLAttributes<HTMLInputElement>;
 };
@@ -23,24 +24,28 @@ export default function Input({
   type,
   value,
   onChange,
+  placeholder,
   inputClassName,
   extraInputProps,
 }: Props) {
   return (
     <>
-      <label
-        htmlFor={id}
-        className={`${styles.label} ${labelClassName}`}
-        {...extraLabelProps}
-      >
-        {label}
-      </label>
+      {label && (
+        <label
+          htmlFor={id}
+          className={`${styles.label} ${labelClassName}`}
+          {...extraLabelProps}
+        >
+          {label}
+        </label>
+      )}
       <input
         id={id}
         name={name}
         type={type}
         value={value}
         onChange={onChange}
+        placeholder={placeholder}
         className={`${styles.input} ${inputClassName}`}
         {...extraInputProps}
       />

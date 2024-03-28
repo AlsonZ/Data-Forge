@@ -7,16 +7,11 @@
   align-items: center;
 }
 
-.rowInput::-webkit-outer-spin-button,
-.rowInput::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.rowInput[type="number"] {
-  appearance: textfield;
-}
-
 .button {
   margin-left: auto;
+}
+
+.rowInput {
+  text-align: right;
+  width: 40px;
 }
